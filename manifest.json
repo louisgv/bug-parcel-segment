@@ -10,7 +10,7 @@
   "content_scripts": [
     {
       "matches": ["<all_urls>"],
-      "js": ["../app.ts"]
+      "js": ["./segment.ts"]
     }
   ],
   "host_permissions": ["https://*/*"]

@@ -2,20 +2,19 @@
   "name": "bug-parcel-segment",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
   "scripts": {
     "dev": "parcel manifest.json",
-    "lib": "parcel app.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
     "@segment/analytics-next": "1.51.7",
-    "@plasmohq/parcel-bundler": "file:../../plasmo/packages/parcel-bundler",
-    "@plasmohq/parcel-packager": "file:../../plasmo/packages/parcel-packager",
     "@parcel/config-default": "2.9.0",
+    "@parcel/config-webextension": "2.9.0",
     "parcel": "^2.9.0"
   },
   "devDependencies": {

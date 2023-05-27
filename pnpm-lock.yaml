@@ -4,15 +4,21 @@ dependencies:
   '@parcel/config-default':
     specifier: 2.9.0
     version: 2.9.0(@parcel/core@2.9.0)
-  '@plasmohq/parcel-bundler':
-    specifier: file:../../plasmo/packages/parcel-bundler
-    version: file:../../plasmo/packages/parcel-bundler
+  '@parcel/config-webextension':
+    specifier: 2.9.0
+    version: 2.9.0(@parcel/core@2.9.0)
   '@segment/analytics-next':
     specifier: 1.51.7
     version: 1.51.7
   parcel:
     specifier: ^2.9.0
     version: 2.9.0
+  react:
+    specifier: 18.2.0
+    version: 18.2.0
+  react-dom:
+    specifier: 18.2.0
+    version: 18.2.0(react@18.2.0)
 
 devDependencies:
   process:
@@ -248,6 +254,28 @@ packages:
       '@parcel/transformer-raw': 2.9.0(@parcel/core@2.9.0)
       '@parcel/transformer-react-refresh-wrap': 2.9.0(@parcel/core@2.9.0)
       '@parcel/transformer-svg': 2.9.0(@parcel/core@2.9.0)
+    transitivePeerDependencies:
+      - '@swc/helpers'
+      - cssnano
+      - postcss
+      - purgecss
+      - relateurl
+      - srcset
+      - terser
+      - uncss
+    dev: false
+
+  /@parcel/config-webextension@2.9.0(@parcel/core@2.9.0):
+    resolution: {integrity: sha512-3X9VyYPVrOEDEAggnnN+WQiCOhEGF+ocZe9HpD+DbDjnmBiGAYJcy91i95wFSMi/tjPpmZmMmT1q6XwuTI0d2w==}
+    peerDependencies:
+      '@parcel/core': ^2.9.0
+    dependencies:
+      '@parcel/config-default': 2.9.0(@parcel/core@2.9.0)
+      '@parcel/core': 2.9.0
+      '@parcel/packager-webextension': 2.9.0(@parcel/core@2.9.0)
+      '@parcel/runtime-webextension': 2.9.0(@parcel/core@2.9.0)
+      '@parcel/transformer-raw': 2.9.0(@parcel/core@2.9.0)
+      '@parcel/transformer-webextension': 2.9.0(@parcel/core@2.9.0)
     transitivePeerDependencies:
       - '@swc/helpers'
       - cssnano
@@ -529,6 +557,17 @@ packages:
       - '@parcel/core'
     dev: false
 
+  /@parcel/packager-webextension@2.9.0(@parcel/core@2.9.0):
+    resolution: {integrity: sha512-uIKaIK7iU1wXVpu0HHtmmhB4zGe93ODxZdb8ds3C3hQ4Zt1gj/l7F39sY3c77l9HYZLwxVL6ZibYSMolWMGPEQ==}
+    engines: {node: '>=12.0.0', parcel: ^2.9.0}
+    dependencies:
+      '@parcel/plugin': 2.9.0(@parcel/core@2.9.0)
+      '@parcel/utils': 2.9.0
+      nullthrows: 1.1.1
+    transitivePeerDependencies:
+      - '@parcel/core'
+    dev: false
+
   /@parcel/plugin@2.9.0(@parcel/core@2.9.0):
     resolution: {integrity: sha512-WiHPX0slZ1vvYWFx2i3pqcb4kvHm/L8MXbnE1zejzePp9t6UMuF5w/KBnPlJI1fiZDlE6g8+pXJCfDCjyYHmsw==}
     engines: {node: '>= 12.0.0'}
@@ -628,6 +667,17 @@ packages:
 
   /@parcel/runtime-service-worker@2.9.0(@parcel/core@2.9.0):
     resolution: {integrity: sha512-egruYYxC39eBEDq1El1g5DG74zybcicoPKCHUt+Bzn2g6/+y0hqjDaP4yAWzTuU6ZWNDmVnjGa7XXkChx43isg==}
+    engines: {node: '>= 12.0.0', parcel: ^2.9.0}
+    dependencies:
+      '@parcel/plugin': 2.9.0(@parcel/core@2.9.0)
+      '@parcel/utils': 2.9.0
+      nullthrows: 1.1.1
+    transitivePeerDependencies:
+      - '@parcel/core'
+    dev: false
+
+  /@parcel/runtime-webextension@2.9.0(@parcel/core@2.9.0):
+    resolution: {integrity: sha512-D48xMb7zlICliGvtB89sWINR1P8spxWaVoQIqULw3g05R2MOK2OEmpTcJJL8oj8wCnlvx1D7bcrOEShJ2TV93Q==}
     engines: {node: '>= 12.0.0', parcel: ^2.9.0}
     dependencies:
       '@parcel/plugin': 2.9.0(@parcel/core@2.9.0)
@@ -797,6 +847,19 @@ packages:
       posthtml-parser: 0.10.2
       posthtml-render: 3.0.0
       semver: 5.7.1
+    transitivePeerDependencies:
+      - '@parcel/core'
+    dev: false
+
+  /@parcel/transformer-webextension@2.9.0(@parcel/core@2.9.0):
+    resolution: {integrity: sha512-wM63hfpuKL8XRvYYfXtUvnlSLIOBYh1CgbhFgg9BteLhKzooxLMQ/TgA6wpKLoTK5Qn9/iqN9Ry2UabLaIWclQ==}
+    engines: {parcel: ^2.9.0}
+    dependencies:
+      '@mischnic/json-sourcemap': 0.1.0
+      '@parcel/diagnostic': 2.9.0
+      '@parcel/plugin': 2.9.0(@parcel/core@2.9.0)
+      '@parcel/utils': 2.9.0
+      content-security-policy-parser: 0.3.0
     transitivePeerDependencies:
       - '@parcel/core'
     dev: false
@@ -2185,6 +2248,11 @@ packages:
     engines: {node: '>= 10'}
     dev: false
 
+  /content-security-policy-parser@0.3.0:
+    resolution: {integrity: sha512-ub90B4t9EfDPv3DCH7vEwGe4tVMkSm4Ow1HsmvmEQwinDfpTEDmkuJVa5WpzHDTt2bUirNRZuzL6S0msASlJhg==}
+    engines: {node: '>=8.0.0'}
+    dev: false
+
   /cosmiconfig@8.1.3:
     resolution: {integrity: sha512-/UkO2JKI18b5jVMJUp0lvKFMpa/Gye+ZgZjKD+DGEN9y7NRcf/nK1A0sp67ONmKtnDCNMS44E6jrk0Yc3bDuUw==}
     engines: {node: '>=14'}
@@ -2580,6 +2648,13 @@ packages:
       '@lmdb/lmdb-win32-x64': 2.7.11
     dev: false
 
+  /loose-envify@1.4.0:
+    resolution: {integrity: sha512-lyuxPGr/Wfhrlem2CL/UcnUc1zcqKAImBDzukY7Y5F/yQiNdko6+fRLevlw1HgMySw7f611UIY408EtxRSoK3Q==}
+    hasBin: true
+    dependencies:
+      js-tokens: 4.0.0
+    dev: false
+
   /mdn-data@2.0.14:
     resolution: {integrity: sha512-dn6wd0uw5GsdswPFfsgMp5NSB0/aDe6fK94YJV/AJDYXL6HVLWBsxeq7js7Ad+mU2K9LAlwpk6kN2D5mwCPVow==}
     dev: false
@@ -2798,6 +2873,16 @@ packages:
     engines: {node: '>= 0.6.0'}
     dev: true
 
+  /react-dom@18.2.0(react@18.2.0):
+    resolution: {integrity: sha512-6IMTriUmvsjHUjNtEDudZfuDQUoWXVxKHhlEGSk81n4YFS+r/Kl99wXiwlVXtPBtJenozv2P+hxDsw9eA7Xo6g==}
+    peerDependencies:
+      react: ^18.2.0
+    dependencies:
+      loose-envify: 1.4.0
+      react: 18.2.0
+      scheduler: 0.23.0
+    dev: false
+
   /react-error-overlay@6.0.9:
     resolution: {integrity: sha512-nQTTcUu+ATDbrSD1BZHr5kgSD4oF8OFjxun8uAaL8RwPBacGBNPf/yAuVVdx17N8XNzRDMrZ9XcKZHCjPW+9ew==}
     dev: false
@@ -2805,6 +2890,13 @@ packages:
   /react-refresh@0.9.0:
     resolution: {integrity: sha512-Gvzk7OZpiqKSkxsQvO/mbTN1poglhmAV7gR/DdIrRrSMXraRQQlfikRJOr3Nb9GTMPC5kof948Zy6jJZIFtDvQ==}
     engines: {node: '>=0.10.0'}
+    dev: false
+
+  /react@18.2.0:
+    resolution: {integrity: sha512-/3IjMdb2L9QbBdWiW5e3P2/npwMBaU9mHCSCUzNln0ZCYbcfTsGbTJrU/kGemdH2IWmB2ioZ+zkxtmq6g09fGQ==}
+    engines: {node: '>=0.10.0'}
+    dependencies:
+      loose-envify: 1.4.0
     dev: false
 
   /regenerator-runtime@0.13.11:
@@ -2827,6 +2919,12 @@ packages:
 
   /safe-buffer@5.2.1:
     resolution: {integrity: sha512-rp3So07KcdmmKbGvgaNxQSJr7bGVSVk5S9Eq1F+ppbRo70+YeaDxkw5Dd8NPN+GD6bjnYm2VuPuCXmpuYvmCXQ==}
+    dev: false
+
+  /scheduler@0.23.0:
+    resolution: {integrity: sha512-CtuThmgHNg7zIZWAXi3AsyIzA3n4xx7aNyjwC2VJldO2LMVDhFK+63xGqq6CsJH4rTAt6/M+N4GhZiDYPx9eUw==}
+    dependencies:
+      loose-envify: 1.4.0
     dev: false
 
   /semver@5.7.1:
@@ -2960,19 +3058,4 @@ packages:
 
   /xxhash-wasm@0.4.2:
     resolution: {integrity: sha512-/eyHVRJQCirEkSZ1agRSCwriMhwlyUcFkXD5TPVSLP+IPzjsqMVzZwdoczLp1SoQU0R3dxz1RpIK+4YNQbCVOA==}
-    dev: false
-
-  file:../../plasmo/packages/parcel-bundler:
-    resolution: {directory: ../../plasmo/packages/parcel-bundler, type: directory}
-    name: '@plasmohq/parcel-bundler'
-    version: 0.5.1
-    engines: {node: '>= 16.0.0', parcel: '>= 2.7.0'}
-    dependencies:
-      '@parcel/core': 2.9.0
-      '@parcel/diagnostic': 2.9.0
-      '@parcel/graph': 2.9.0
-      '@parcel/hash': 2.9.0
-      '@parcel/plugin': 2.9.0(@parcel/core@2.9.0)
-      '@parcel/utils': 2.9.0
-      nullthrows: 1.1.1
     dev: false

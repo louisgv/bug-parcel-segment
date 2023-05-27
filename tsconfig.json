@@ -1,0 +1,10 @@
+{
+  "compilerOptions": {
+    "target": "esNext",
+    "jsx": "preserve",
+    "moduleResolution": "node16",
+    "paths": {
+      "~": ["./*"]
+    }
+  }
+}
