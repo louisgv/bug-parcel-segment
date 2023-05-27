@@ -1,7 +1,3 @@
 {
-  "extends": "@parcel/config-webextension",
-  "bundler": "@plasmohq/parcel-bundler",
-  "packagers": {
-    "manifest.json": "@plasmohq/parcel-packager"
-  }
+  "extends": "@parcel/config-webextension"
 }
